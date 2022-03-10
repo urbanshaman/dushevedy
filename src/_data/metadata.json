@@ -4,7 +4,7 @@
   "description": "Товарищество психологов Душеведы",
   "repo": "https://github.com/ygoex/yetty",
   "feed": {
-    "subtitle": "Товарищество психологов \"Душеведы\"",
+    "subtitle": "Товарищество психологов Душеведы",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://dushevedy.netlify.app/"
@@ -15,8 +15,8 @@
   },
   "author": {
     "name": "Душеведы",
-    "email": "Душеведы@gmail.com",
-    "username": "___",
+    "email": "nomail@gmail.com",
+    "username": "nomail",
     "url": "https://dushevedy.netlify.app/about-me/",
     "github": "https://github.com/ygoex",
   }
