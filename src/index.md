@@ -6,8 +6,8 @@ eleventyNavigation:
   title: Главная # as it will appear in the nav
   order: 1 # order to display in the nav
 seo: #uncomment 'seo' and then any elements to use them
-  title: Добро пожаловать в гости
-  description: к Товариществу психологов "Душеведы"!
+  title: Добро пожаловать в гости к Товариществу психологов "Душеведы"!
+  description: 
 ---
 
 У нас тут всё просто, по-домашнему. Никакого мозгоправства или выноса мозга, никаких дежурных советов и заезженных бесполезных рекомендаций.
