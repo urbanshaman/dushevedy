@@ -1,10 +1,10 @@
 {
-  "name": "tea-base-template",
+  "name": "dushevedy",
   "version": "1.0.0",
-  "description": "A minimal TEAstack (TailwindCSS, 11ty, AlpineJS) for testing and tutorials",
+  "description": "Site dushevedy.ru",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shanerobinson/tea-base-template.git"
+    "url": "git+https://github.com/urbanshaman/dushevedy.git"
   },
   "keywords": [
     "TailwindCSS",
@@ -14,12 +14,12 @@
     "tutorial",
     "education"
   ],
-  "author": "Shane Robinson",
+  "author": "UrbanShaman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shanerobinson/tea-base-template/issues"
+    "url": "https://github.com/urbanshaman/dushevedy/issues"
   },
-  "homepage": "https://github.com/shanerobinson/tea-base-template#readme",
+  "homepage": "https://github.com/urbanshaman/dushevedy#readme",
   "scripts": {
     "clean": "rimraf dist",
     "debug": "set DEBUG=* & eleventy",
