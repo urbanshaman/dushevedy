@@ -1,33 +1,27 @@
-{%- from "layouts/partials/component.njk" import component -%}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  {% include 'layouts/partials/head.njk' %}
-  <body {% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
-
-    <a class="skip-link btn btn-lg font-sm" href="#main-content">Skip to content</a>
-
-    {% include 'layouts/partials/header.njk' %}
-
-    <main id="main-content" {% if templateClass %} class="{{ templateClass }} {{ pageClass }}"{% endif %}>
-      {% block content %}
-        Content comes here!
-      {% endblock %}
-    </main>
-
-    {% include 'layouts/partials/footer.njk' %}
-
-    {% include 'layouts/partials/svgs.njk' %}
-
-    <!-- Current page: {{ page.url | url }} -->
-
-    {% if page.url === '/' %}
-      <script src="{{ '/assets/scripts/vendors/modernizr.min.js' | url }}"></script>
-    {% endif %}
-
-    <script src="{% if yetty.environment === 'production' %}{{ '/assets/scripts/bundle.min.js' | url | cacheBuster }}{% else %}{{ '/assets/scripts/index.js' | url | cacheBuster }}{% endif %}"></script>
-
-    {% block js %}{% endblock %}
-
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo.title or title }} | {{ meta.title }}</title>
+    {%- include "partials/head.njk" %}
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="dns-prefetch" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" defer/>
+    <link rel="stylesheet" href="/assets/css/style.css" defer/>
+    {% set prismTomorrow %}{% include "prism/prism-tomorrow.min.css" %}{% endset -%}
+    <style>{{- prismTomorrow | cssmin | safe }}</style>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      {% include "components/nav.njk" %}
+      <div class="flex-grow mx-4 my-12 sm:mx-20 lg:mx-32 ">
+        <main class="prose sm:prose-lg" id="content">
+          {{ content | safe }}
+        </main>
+      </div>
+      {% include "partials/footer.njk" %}
+    </div>
   </body>
 </html>

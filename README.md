@@ -1,146 +1,76 @@
-# yetty: Yet another Eleventy starter kit for my (& your) new projects. Built with accessibility and performance in mind.
+# tea-base-template
 
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/faab84cf-52cb-4150-b142-f0c4e0e5312f/deploy-status)](https://app.netlify.com/sites/yetty/deploys) -->
+demo site: [teastack.netlify.app](https://teastack.netlify.app/)
 
-![Netlify-build](https://img.shields.io/netlify/faab84cf-52cb-4150-b142-f0c4e0e5312f?style=for-the-badge)
-![GitHub-license](https://img.shields.io/github/license/ygoex/yetty?style=for-the-badge)
-![GitHub-stars](https://img.shields.io/github/stars/ygoex/yetty?style=for-the-badge)
-![GitHub-forks](https://img.shields.io/github/forks/ygoex/yetty?style=for-the-badge)
+This started out to be a most minimal TEAstack _(TailwindCSS, 11ty, AlpineJS)_ base template for testing and tutotials.
 
-![Yetty](https://github.com/ygoex/yetty/blob/main/src/assets/images/yetty-social.jpg?raw=true)
+But it evolved into a more complicated, but also more refined, version of my #100DaysOfCode template.
 
-## Features:
-- [Sass/Scss](https://github.com/sass/node-sass): Scss files are compiled before Eleventy builds the site. The files are compiled in the `./src/styles` folder and then will be passed through copy (see `.eleventy.js`) to the new site created under `./dist/`. For Netlify users, an alternative option with plugins is explained here: [https://css-tricks.com/making-my-netlify-build-run-sass/](https://css-tricks.com/making-my-netlify-build-run-sass/).
-- [Critical CSS](https://github.com/gregives/eleventy-critical-css): Critical CSS is automatically included in the head of the document using the [eleventy-critical-css plugin](https://www.npmjs.com/package/eleventy-critical-css).
-- PostCSS ([Autoprefixer](https://github.com/postcss/autoprefixer) and [PurgeCSS](https://github.com/FullHuman/purgecss)): Both dependencies have been set up to run through the main css stylesheet after Eleventy has generated the dist folder.
-- Persistent dark mode using local storage as seen here: [https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
-- Cache busting via filter based on [https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/](https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/).
-- HTML minified on prooduction with [https://www.npmjs.com/package/html-minifier](https://www.npmjs.com/package/html-minifier) package.
-- PWA using [https://github.com/okitavera/eleventy-plugin-pwa](https://github.com/okitavera/eleventy-plugin-pwa) plugin.
-- JS compilation and minification with [Webpack](https://webpack.js.org/) CLI.
-- Image processing with [eleventy-img](https://github.com/11ty/eleventy-img) plugin. Generates multiple sizes images in two different formats (jpg and webp), and markup with `<figure>`, `<picture>` and native lazy loading.
-- [Modernizr](https://modernizr.com/) CLI: To build a custom and minified version of the library as seen here: [https://v2.14islands.com/blog/2016/04/20/better-way-to-use-modernizr-with-command-line-config/](https://v2.14islands.com/blog/2016/04/20/better-way-to-use-modernizr-with-command-line-config/). Yetty is using it to detect if the browser supports Webp as background-image in CSS.
+Not everything is currently working that works in that project. But enough is working that this is a fully functional blog system and more than enough to get you started on your own #100DaysOfCode deployment and publishing.
 
-## TO-DO:
-- [ ] Improve documentation
-- [ ] Testing with Cypress
+## NOTE: This uses [TailwindCSS Typography plugin](https://github.com/tailwindlabs/tailwindcss-typography)
 
-## Demo
+And while the plugin does a really nice job of setting attractive typography defaults, it really messes up image margins, padding, etc. IMHO... So much so that I find it impossible to use for a site containing image galleries, portfolios, etc. it's great if you're only publishing a text-based blog with a few inline images. If you want more control over your images, you'll probably need to completely remove the plugin from the `/tailwind.config.js` file and then reset your typography defaults in the `/src/assets/css/tailwind.css` file.
 
-* [yetty](https://yetty.netlify.app/)
+## Step 1. Clone It!
 
-## Deploy this to your own site
+1. Click the **"Code"** button above, then click the clipboard icon to copy the repo URL
+2. `cd` into your local **"Sites"** directory.
+3. `git clone ` and immediately paste the repo URL you copied.
+4. Hit **[RETURN]** key
+5. The repo will be cloned to your **"Sites"** dir.
+6. `cd tea-base-template`
 
-This builder is amazing. Try it out to get your own yetty site in a few clicks!
+## Step 2. Install
 
-* [Get your own yetty web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/ygoex/yetty)
+1. `npm install` to install all the new dependencies in your local repo.
+2. `npm run dev` to start the 11ty dev server. If everything went well you should see something like the following:
 
-## Requirements
+![npmrundev](_npmrundev.png)
 
-- [Node.js v10 or higher](https://nodejs.org/en/download/) must be installed to run this program.
-- [npm 7.20.0 or higher](https://www.npmjs.com/package/npm) must be also installed.
+3. _You use `control c` to stop the dev server._
+4. `code .` will launch VSCode in that directory, ready to get to work!
 
-## Getting Started
+## Step 3. Browse Local Dev Site
 
-### 1. Clone this Repository
+1. Notice the last few lines where it tells you the local URL to use to browse the local dev site:
+   - `Local: http://localhost:8080`
+2. Open your browser to [http://localhost:8080](http://localhost:8080) _(you should be able to click that link))_
+3. You should see the **"Hello World"** index page.
+4. Click around the local dev site.
 
-```
-git clone https://github.com/ygoex/yetty.git my-new-project
-```
-or, if you are currently signed in to GitHub, [generate a repo from this template](https://github.com/ygoex/yetty/generate).
+## Step 4. Make Changes
 
+The site files live in the `/src` directory.
 
-### 2. Navigate to the directory
+1. Make text changes in the `/src/index.md` file, save the changes, and you should see the home page automatically update with your changes.
+2. This is called **"hot reloading"** and it's built-in to 11ty when you're running in dev mode.
+3. Open `/src/posts/2020-12-04-post-one.md` and make changes, save them, and the site will refresh in the browser automatically. If you haven't already, click **"Days"** in the Nav and click to the **"Post One"** post to see your changes. Make more changes and that post will update.
+4. Same with the **"About"** page in `/src/pages/about.md`.
 
-```
-cd my-new-project
-```
+## Step 5. Add Your Data
 
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
+11ty can use **Data** files to provide almost unlimited functionalities. One of the uses is to manage site-wide content.
 
-### 3. Install dependencies
+1. In VSCode, open `/src/_data/meta.json` and you'll find some basic global site content. **META Content**.
+2. Make changes, making sure to watch out for double quotes and commas, and you'll see those changes immediately _(if you're still running the dev server.)_
+3. Take a look in the `/src/_data/social.json` file to see how the social icons in the footer are controled. Add your own information there. And if you don't have an account on a platform, just delete the URL value. When you save the file the icons in the footer will automatically update.
 
-```
-npm install
-```
+## Step 6. Create New Posts
 
-### 4. Edit _data/metadata.json and adjust the values to your details.
+You have some posts sitting in your Notes.app. This is just a testing project so you should create some new Posts in `/src/posts`.
 
-### 5. Run Eleventy
+1. Easiest way is to duplicate the existing post and change the filename and content.
+2. You do NOT have to include the date in the filename... I do because the posts then automatically sort in the folder, with the newest one on top. It's not a big deal if you have 5 posts. But when you have hundreds of posts it gets very difficult when you want to edit a post to find it.
+3. You'll also notice each post has a `date:` value in the frontmatter at the top. At the very least that should be set to the publish date. The time is not important. _(I use [TextExpander](https://textexpander.com/) and have a snippet that inserts the correctly formatted date for NOW when I create a new post.)_
 
-For local development:
-```
-npm start
-```
+## Step 7. Change About Page
 
-To build a production version:
-```
-npm run build
-```
+1. In VSCode open `/src/pages/about.md` and change the content below the frontmatter to whatever you want.
+2. If you don't want an **About Page** you can just delete the file.
 
-For debug mode:
-```
-DEBUG=* npx eleventy
-```
+## Step 8. Post Questions in Issues
 
-### Implementation Notes
+Post any questions you have in the repo Issues. When you feel comfortable working on this test project, I'll provide instructions on how to clone it to a new repo. That new repo will be your REAL #100Days site. And at Netlify you'll point your current site setting to your new repo. It will be great practice and experience for you to know how to do that. Will also be good experience to delete junk repos on your Github and also delete the local repos.
 
-* `about/index.md` shows how to add a new content page.
-* `posts/` has the blog posts but really they can live in any directory. They need only the `post` tag to be added to this collection.
-* Add the `nav` tag to add a template to the top level site navigation. For example, this is in use on `index.njk` and `about/index.md`.
-* The blog post feed template is in `feed/feed.njk`. This is also a good example of using a global data files in that it uses `_data/metadata.json`.
-* This example uses three layouts:
-  * `_includes/layouts/base.njk`: the top level HTML structure
-  * `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-  * `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-* `_includes/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
-
-## Other features you might require:
-
-- **Inline CSS**: If you require further control over the above the fold & common style inlined by CriticalCSS, you can inline the style manually as follows:
-
-    1. Add the following code between the head tags in the `base.njk` file:
-
-        ```
-        {% set css %}
-          {% include "inline_style/inline_style.css" %}
-        {% endset %}
-        <style>
-          {{css | cssmin | safe}}
-        </style>
-        ```
-    2. Create a scss file with the name `inline_style.scss` under `_includes/inline_style/scss/inline_style.scss`
-
-    3. Add the following command to the beginning of the **sass:prod** script in `package.json`:
-
-        ```
-        node-sass src/_includes/inline_style/scss/ --output src/_includes/inline_style/ --output-style compressed &&
-        ```
-
-        And also, the following command to the beginning of the **sass:dev** script:
-
-        ```
-        node-sass src/_includes/inline_style/scss/ --output src/_includes/inline_style/ --source-map true --source-map-contents true &&
-        ```
-
-  For additional documentation about how to inline css in Eleventy visit:
-
-    1. [https://www.11ty.dev/docs/quicktips/inline-css/](https://www.11ty.dev/docs/quicktips/inline-css/)
-    2. [https://www.11ty.dev/docs/quicktips/concatenate/](https://www.11ty.dev/docs/quicktips/concatenate/)
-    3. [https://danabyerly.com/articles/manually-splitting-css-files-in-eleventy/](https://danabyerly.com/articles/manually-splitting-css-files-in-eleventy/)
-
----
-
-This starter kit was born as a fork of [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog), but it also includes features inspired by other Eleventy projects:
-
-- [Eleventy Solo](https://github.com/brycewray/eleventy_solo)
-- [Eleventy Duo](https://github.com/yinkakun/eleventy-duo)
-- [Eleventy One](https://github.com/philhawksworth/eleventyone)
-- [Hylia](https://github.com/andy-piccalilli/hylia)
-- [11ty Netlify Jumpstart](https://github.com/5t3ph/11ty-netlify-jumpstart)
-- [Supermaya](https://github.com/MadeByMike/supermaya)
-- [huphtur.nl](https://github.com/huphtur/huphtur.nl)
-- [11ty Component Macro](https://github.com/trys/11ty-component-macro)
-
-
-[<img src="https://img.buymeacoffee.com/button-api/?text=Buy me chocolate&emoji=🍫&slug=ygoex&button_colour=ffdbe1&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00">](https://www.buymeacoffee.com/ygoex)
+## Good Luck!!

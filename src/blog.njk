@@ -1,40 +1,23 @@
 ---
-title: Blog
-imgUrl: https://source.unsplash.com/-K6JMRMj4x4/
-imgAlt: Disassembled typewriter
-imgSize: '(min-width: 30em) 50vw, 100vw'
-pictureClass: grid-column-full
-imgClass: img-full
-imgBorderColor: '#3f51b5'
-eleventyComputed:
-    description: Thoughts & ramblings by {{ metadata.author.name }}
-permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+title: The Days
+date: 2020-08-05
+layout: layouts/page.njk
 eleventyNavigation:
-  key: Blog
-  order: 2
-pagination:
-  data: collections.posts
-  size: 3
-  alias: posts
-  reverse: true
+  key: main
+  title: Записи # as it will appear in the nav
+  order: 2    # order to display in the nav
+seo:
+  title: Записи
+  description: Daily posts
 ---
 
-{% extends 'layouts/home.njk' %}
+{% set postslist = collections.post %}
 
-{% block content %}
-  <div class="blog-heading-tags">
-    <h1>{{ title }}</h1>
-    {{ component('tags-list', {
-        tags: collections.tagList
-    }) }}
-  </div>
+{# 
+  Allows a user to easily change the Post List Style.
+  Change the 'postListStyle' value in /_data/structure.json.
+  NOTE: Can make this a select in the CMS?
+#}
+{% set postlist = ['components/', structure.postListStyle, '.njk'] %}
+{% include postlist | join %}
 
-  {% imageNjk imgUrl, imgAlt, imgSize, pictureClass, imgClass, imgBorderColor %}
-
-  {% set allPosts = collections.posts %}
-  {% set postslist = posts %}
-
-  {% include "layouts/partials/posts-list.njk" %}
-  {% include "layouts/partials/pagination.njk" %}
-
-{% endblock %}

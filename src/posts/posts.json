@@ -1,6 +1,6 @@
 {
-  "tags": [
-    "posts"
-  ],
-  "permalink": "posts/{{ title | slug }}/"
+	"layout": "layouts/post.njk",
+	"permalink": "/{{ title | slug }}/index.html",
+	"tags": ["post"],
+	"author": "{{ meta.author }}"
 }
