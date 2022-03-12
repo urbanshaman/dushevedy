@@ -14,6 +14,7 @@
 .prose h5,
 .heading {
 	@apply text-gray-700;
+	@apply font-cursive;
 }
 
 /* 
@@ -23,6 +24,7 @@
 */
 .prose h3.heading {
 	@apply my-0;
+	@apply font-cursive;
 }
 
 .prose img.card,
@@ -33,6 +35,7 @@
 
 .prose .wrapper p {
 	@apply my-0;
+	@apply font-cursive;
 }
 
 @tailwind utilities;

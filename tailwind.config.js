@@ -6,7 +6,12 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {},
+      fontFamily: {
+        'cursive': ['"Bad Script"', 'cursive']
+	    }
+	  },
   },
   variants: {
     extend: {},
