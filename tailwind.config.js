@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {},
       fontFamily: {
-        'site': ['Comfortaa', 'site']
+        'site': ['Forum', 'site']
 	    }
 	  },
   },
