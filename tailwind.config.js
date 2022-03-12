@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {},
       fontFamily: {
-        'cursive': ['"Bad Script"', 'cursive']
+        'site': ['"Old Standard TT"', 'site']
 	    }
 	  },
   },
