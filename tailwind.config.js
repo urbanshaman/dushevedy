@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {},
       fontFamily: {
-        'site': ['"Old Standard TT"', 'site']
+        'site': ['Jost', 'site']
 	    }
 	  },
   },
