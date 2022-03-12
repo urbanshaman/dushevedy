@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {},
       fontFamily: {
-        'site': ['"Source Sans Pro"', 'site']
+        'site': ['Comfortaa', 'site']
 	    }
 	  },
   },
